@@ -59,6 +59,8 @@ GEM
       rubyzip (~> 1.0)
     watir (6.10.2)
       selenium-webdriver (~> 3.4, >= 3.4.1)
+    watir-scroll (0.3.0)
+      watir (>= 6.0)
     yml_reader (0.7)
 
 PLATFORMS
@@ -69,6 +71,7 @@ DEPENDENCIES
   page-object
   rspec
   watir (~> 6.8)
+  watir-scroll
 
 BUNDLED WITH
    1.16.1

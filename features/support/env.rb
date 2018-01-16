@@ -1,4 +1,4 @@
-BASE_URL = 'http://www.bjss.com/'
+BASE_URL = 'http://automationpractice.com/index.php'
 require 'page-object'
 require 'cucumber'
 require 'rspec/matchers'

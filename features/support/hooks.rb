@@ -1,6 +1,7 @@
 require 'watir'
 require 'time'
 browser = Watir::Browser.new :firefox
+browser.window.maximize
 
 Before do
   @browser = browser
