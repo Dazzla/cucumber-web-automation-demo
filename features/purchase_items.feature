@@ -7,11 +7,12 @@ Feature: Check out and purchase items
   # There are too many steps and the assertions are not clean and separated
   # Presented this way for clarity
   Scenario: I purchase two items
-    Given I am viewing an item in quick-view
+    Given I am logged in
+    And I am viewing an item in quick-view
     When I change the size of an item
     And I add the item to my basket
     And I am viewing another item in quick-view
     And I add the item to my basket
     Then the items are visible in the basket
-    And the total price is correct
-#    And I can complete payment
+    And the pricing is correct
+    And I can complete payment

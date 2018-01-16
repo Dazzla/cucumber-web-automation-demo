@@ -16,8 +16,13 @@ class QuickViewModalDialog
   end
 
   def submit_to_basket
+    #TODO: This, unsurprisingly, is turning out to be somewhat brittle. Shoould be refactored.
     @browser.div(class: 'fancybox-inner').iframe.body.p(id: 'add_to_cart').when_present.click
-    self.close_confirmation_dialog_element.when_present.click
+    self.close_confirmation_dialog_element.click #Refactor to put wait time into config
+  end
+
+  def current_item_price
+    @browser.span(id: 'layer_cart_product_price').text.gsub('$', '').to_f.round(2)
   end
 
 end

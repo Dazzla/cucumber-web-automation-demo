@@ -12,19 +12,30 @@ end
 
 And(/^I add the item to my basket$/) do
   (on QuickViewModalDialog).submit_to_basket
+  @price = @price + (on QuickViewModalDialog).current_item_price
 end
 
 Then(/^the items are visible in the basket$/) do
-  expect((visit BasketPage).no_of_products_in_basket).to eq 2
-  true
+  visit BasketPage do |basket_page|
+    expect(basket_page.no_of_products_in_basket).to eq 2
+
+    #TODO: This is ugly. Tidy.
+    expect(basket_page.basket_contents_element.trs(id: /product_(\S+)/).first.text.include? 'Size : L')
+  end
 end
 
-And(/^the total price is correct$/) do
-  pending
+And(/^the pricing is correct$/) do
+  on BasketPage do |basket_page|
+    expect(@price.round(2)).to equal basket_page.products_total
+    expect(basket_page.products_total + basket_page.shipping_total).to equal basket_page.total_price_without_tax
+  end
 end
 
 And(/^I can complete payment$/) do
-  pending
+  (on BasketPage).proceed_to_checkout
+  (on OrderConfirmationPage).proceed_to_checkout
+  (on ShippingPage).check_ts_and_cs_checkbox
+  (on ShippingPage).proceed_to_checkout
+  (on PaymentPage).pay_by_bankwire
+  (on OrderSummaryPage).confirm_order
 end
-
-
