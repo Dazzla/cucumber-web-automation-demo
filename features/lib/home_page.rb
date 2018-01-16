@@ -10,16 +10,16 @@ class HomePage
   #No id exists, so building an array of quick-view links. Request id added to elems.
   unordered_list(:featured_items_carousel, id: 'homefeatured')
 
-  list_items(:product_teaser) do |carousel|
-    carousel.featured_items_carousel_element.list_item_element
+  list_items(:product_teaser) do |teaser|
+    teaser.featured_items_carousel_element.list_item_elements
   end
 
   links(:quick_view, class:'quick-view')
 
-  def open_quick_view
+  def quick_view_item(index=0)
     self.scroll.to :center #Not ideal, perhaps brittle. Needs refactor.
-    self.product_teaser_elements.hover
-    self.quick_view_elements.first.click
+    puts self.product_teaser_elements[index].hover
+    self.quick_view_elements[index].click
   end
 
 
