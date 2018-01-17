@@ -14,7 +14,7 @@ class QuickViewModalDialog
 
   def submit_to_basket
     #TODO: This, unsurprisingly, is turning out to be somewhat brittle. Should be refactored.
-    sleep(1) #TODO: temprary solution to race condition. Refactor to better wait.
+    sleep(1) #TODO: temporary solution to race condition. Refactor to better wait.
     @browser.div(class: 'fancybox-inner').iframe.body.p(id: 'add_to_cart').click
     self.close_confirmation_dialog_element.click
   end
@@ -32,8 +32,7 @@ class QuickViewModalDialog
   end
 
   def colour_is_selected?(colour)
-    is = fancybox_iframe.link(name: "#{colour.capitalize}").attribute_value('class') == 'color_pick selected'
-    is
+    fancybox_iframe.link(name: "#{colour.capitalize}").attribute_value('class') == 'color_pick selected'
   end
 
 end
