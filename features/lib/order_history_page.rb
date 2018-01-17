@@ -8,7 +8,7 @@ class OrderHistoryPage
 
 
   def show_latest_order
-    @browser.tr(class: 'last_item alternate_item')
+    @browser.tr(class: 'last_item')
         .link(class: 'color-myaccount').click
   end
 
