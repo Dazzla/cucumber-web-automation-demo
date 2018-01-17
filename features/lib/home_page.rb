@@ -7,7 +7,6 @@ class HomePage
 
   page_url BASE_URL
 
-  #TODO: No id exists, so building an array of quick-view links. Request id added to elems.
   unordered_list(:featured_items_carousel, id: 'homefeatured')
   list_items(:product_teaser) do |teaser|
     teaser.featured_items_carousel_element.list_item_elements

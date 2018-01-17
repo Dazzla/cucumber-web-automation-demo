@@ -21,12 +21,10 @@ You will need to supply features/support/password.rb and assign ```PASSWORD``` i
   sleep(1)
   
   #TODO: This is ugly. Tidy.
+  #TODO: No id exists, so building an array of quick-view links. Request id added to elems.
   features/step_definitions/purchase_steps.rb:22: 
   expect(basket_page.basket_contents_element.trs(id: /product_(\S+)/).first.text.include? 'Size : L')
-      
-  #TODO: No id exists, so building an array of quick-view links. Request id added to elems.
-  expect(basket_page.basket_contents_element.trs(id: /product_(\S+)/).first.text.include? 'Size : L')
-  features/lib/home_page.rb:10 
+  
   
     #TODO: This test is too long and should be refactored into more atomic tests
     # There are too many steps and the assertions are not clean and separated
