@@ -11,7 +11,7 @@ Before do
 end
 
 After do |scenario|
-  @browser.goto(BASE_URL+'index.php?mylogout=')
+  @browser.goto(BASE_URL + 'index.php?mylogout=')
   if scenario.failed?
     @browser.screenshot.save SCREENSHOT_DIRECTORY + "/" + (Time.now).to_s.gsub(" ", "_") + "_" + scenario.name + ".png"
   end

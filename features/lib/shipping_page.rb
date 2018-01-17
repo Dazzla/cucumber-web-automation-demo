@@ -1,4 +1,3 @@
-
 class ShippingPage
 
   include PageObject

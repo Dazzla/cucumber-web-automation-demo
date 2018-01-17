@@ -10,9 +10,9 @@ class LoginPage
   text_field(:password_field, id: 'passwd')
   button(:submit_login, id: 'SubmitLogin')
 
-  def log_in(username=USERNAME, password=PASSWORD)
-    self.email_field=username
-    self.password_field=password
+  def log_in(username = USERNAME, password = PASSWORD)
+    self.email_field = username
+    self.password_field = password
     self.submit_login
   end
 
