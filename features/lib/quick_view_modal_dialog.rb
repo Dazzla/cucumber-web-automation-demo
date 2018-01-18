@@ -28,11 +28,12 @@ class QuickViewModalDialog
   end
 
   def select_colour(colour)
-    sleep 2 #TODO: fix with more appropriate wait
+    sleep 1 #TODO: fix with more appropriate wait
     fancybox_iframe.link(name: "#{colour.capitalize}").click
   end
 
   def colour_is_selected?(colour)
+    sleep 1 #TODO: fix with more appropriate wait
     fancybox_iframe.link(name: "#{colour.capitalize}").attribute_value('class') == 'color_pick selected'
   end
 
