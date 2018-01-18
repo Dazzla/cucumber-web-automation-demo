@@ -10,3 +10,8 @@ Then(/^I can see that the item's selected colour is orange$/) do
     expect(orange_is_selected).to be true
   end
 end
+
+
+When(/^fail$/) do
+  fail 'Test Failure'
+end

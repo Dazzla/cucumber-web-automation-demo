@@ -7,3 +7,6 @@ Feature: Screenshot on fail
     Given I am viewing an item in quick-view
     When I select the item in blue
     Then I can see that the item's selected colour is orange
+
+    Scenario: Fail quickly
+      * fail
