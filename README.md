@@ -1,4 +1,5 @@
-****BJSS Coding assignment
+**BJSS Coding assignment
+
 
 Run with 
 
@@ -10,8 +11,9 @@ in the project root directory.
 
 You will need to supply features/support/password.rb and assign ```PASSWORD``` in there
 
-****TODO List
-  ```ruby
+```ruby
+
+**TODO List
    
   #TODO: This, unsurprisingly, is turning out to be somewhat brittle. Should be refactored.
   features/lib/quick_view_modal_dialog.rb:16: 
