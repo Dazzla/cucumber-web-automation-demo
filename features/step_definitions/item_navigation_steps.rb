@@ -4,8 +4,9 @@ When(/^I select the item in blue$/) do
   end
 end
 
-Then(/^I can see that the item's selected colour is blue$/) do
+Then(/^I can see that the item's selected colour is orange$/) do
   on QuickViewModalDialog do |modal_dialog|
-    expect(modal_dialog.colour_is_selected?('Blue')).to be true
+    orange_is_selected = modal_dialog.colour_is_selected?('Orange')
+    expect(orange_is_selected).to be true
   end
 end

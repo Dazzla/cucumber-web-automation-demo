@@ -28,6 +28,7 @@ class QuickViewModalDialog
   end
 
   def select_colour(colour)
+    sleep 2 #TODO: fix with more appropriate wait
     fancybox_iframe.link(name: "#{colour.capitalize}").click
   end
 
