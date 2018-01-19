@@ -12,15 +12,15 @@ end
 
 And(/^I add the item to my basket$/) do
   (on QuickViewModalDialog).submit_to_basket
-  @price = @price + (on QuickViewModalDialog).current_item_price
+  @price += (on QuickViewModalDialog).current_item_price
 end
 
 Then(/^the items are visible in the basket$/) do
   visit BasketPage do |basket_page|
     expect(basket_page.no_of_products_in_basket).to eq 2
 
-    #TODO: This is ugly. Tidy.
-    expect(basket_page.basket_contents_element.trs(id: /product_(\S+)/).first.text.include? 'Size : L')
+    # TODO: This is ugly. Tidy.
+    expect(basket_page.basket_contents_element.trs(id: /product_(\S+)/).first.text.include?('Size : L'))
   end
 end
 

@@ -11,7 +11,6 @@ Then(/^I can see that the item's selected colour is orange$/) do
   end
 end
 
-
 When(/^fail$/) do
-  fail 'Test Failure'
+  raise 'Test Failure'
 end

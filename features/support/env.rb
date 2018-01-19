@@ -1,7 +1,7 @@
-BASE_URL = 'http://automationpractice.com/'
-USERNAME = 'db@mailinator.com'
-TEST_COMMENT = 'TEST COMMENT 001'
-SCREENSHOT_DIRECTORY = 'features/reports/screenshots'
+BASE_URL = 'http://automationpractice.com/'.freeze
+USERNAME = 'db@mailinator.com'.freeze
+TEST_COMMENT = 'TEST COMMENT 001'.freeze
+SCREENSHOT_DIRECTORY = 'features/reports/screenshots'.freeze
 
 require 'page-object'
 require 'cucumber'

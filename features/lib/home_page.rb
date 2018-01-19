@@ -2,7 +2,6 @@ require 'page-object'
 require 'watir-scroll'
 
 class HomePage
-
   include PageObject
 
   page_url BASE_URL
@@ -14,14 +13,12 @@ class HomePage
   links(:quick_view, class: 'quick-view')
 
   def quick_view_item(index = 0)
-    self.scroll.to :center #Not ideal, perhaps brittle. Needs refactor.
-    puts self.product_teaser_elements[index].hover
-    self.quick_view_elements[index].click
+    scroll.to :center # Not ideal, perhaps brittle. Needs refactor.
+    puts product_teaser_elements[index].hover
+    quick_view_elements[index].click
   end
 
   def log_in_link
     @browser.goto('http://automationpractice.com/index.php?controller=my-account')
   end
-
-
 end
