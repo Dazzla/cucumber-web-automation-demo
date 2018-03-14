@@ -1,6 +1,3 @@
-**BJSS Coding assignment**
-
-
 Run with 
 
 ```
